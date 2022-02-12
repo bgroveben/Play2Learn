@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles/normalize.css">
+<link rel="stylesheet" 
+href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" 
+integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" 
+crossorigin="anonymous">
+<link rel="stylesheet" href="styles/styles.css">
+<title>Login</title>
+</head>
+<body>
+    <header>
+        <h1>Login and Registration</h1>
+        <nav>
+            <div>
+                <li class="float-left">pl4y2l34rn rul35</li>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Games<i class="fa fa-arrow-down" id="arrow"></i></a>
+                        <!-- arrow icon needs screen width of at least 466px -->
+                        <ul>
+                            <li><a href="games/anagram-hunt.html">Anagram Hunt</a></li>
+                            <li><a href="games/math-facts.html">Math Facts</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+          </nav>
+      </header>
+    <main>
+<!--
+    This is a simple form. When the user clicks on the Need an account? Register link, the 
+    page should not refresh or go to another page. Instead, you should use JavaScript to hide 
+    the login form and show the register form.
+    Use a div class for login and register forms, no div class for elements displayed on both
+    pages?
+    Both forms should have an action of javascript:alert('Form Submitted'), which will simply 
+    alert that the form was submitted.
+    WFM101/Forms/Solutions/registration-2.html
+-->
+        <form id="loginform" action="javascript:alert('Form Submitted')">
+            <h2 id="logintitle">Log In</h2> 
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" size="15">
+            </div>
+            <div id="useremail" class="invisible">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div>
+                <label for="pw">Password:</label>
+                <input type="password" name="pw" id="pw" size="15">
+            </div>
+            <div id="repeatpassword" class="invisible">
+                <label for="rpw">Repeat Password:</label>
+                <input type="password" name="rpw" id="rpw" size="15">
+            </div>
+            <div>
+                <button type="submit" name="loginbutton" id="loginbutton"
+                    value="Log In">Log In</button>
+            </div>
+            <div id="registerterms" class="invisible">
+                <input type="checkbox" name="terms" id="terms">
+                <label for="terms">I am over 13 and like playing computer games.</label>
+            </div>
+            <div>
+                <a href="#" id="registerlink" class="visible">Need an account? Register Here.</a>
+                <a href="#" id="loginlink" class="invisible">Have an account? Log In Here.</a>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2022 b6r0v3b3n/bgroveben. All rights reserved.</p>
+        <address>
+            <a href="contact-us.html">
+                <i class="fas fa-envelope-square"></i></a>
+            <a href="https://www.instagram.com">
+                <i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com">
+                <i class="fab fa-twitter-square"></i></a>
+            <a href="https://www.facebook.com">
+                <i class="fab fa-facebook-square"></i></a>
+        </address>
+    </footer>
+<script>
+const registerLink = document.getElementById('registerlink');
+const loginLink = document.getElementById('loginlink');
+const repeatPassword = document.getElementById('repeatpassword');
+const loginTitle = document.getElementById('logintitle');
+const loginButton = document.getElementById('loginbutton');
+const userEmail = document.getElementById('useremail');
+const registerTerms = document.getElementById('registerterms');
+registerLink.addEventListener('click', register);
+function register() {
+    repeatPassword.classList.replace("invisible", "visible");
+    registerLink.classList.replace("visible", "invisible");
+    loginLink.classList.replace("invisible", "visible");
+    userEmail.classList.replace("invisible", "visible");
+    registerTerms.classList.replace("invisible", "visible");
+    loginTitle.innerText = "Register";
+    loginButton.innerText = "Register";
+}
+loginLink.addEventListener('click', logIn);
+function logIn() {
+    repeatPassword.classList.replace("visible", "invisible");
+    loginLink.classList.replace("visible", "invisible");
+    registerLink.classList.replace("invisible", "visible");
+    userEmail.classList.replace("visible", "invisible");
+    registerTerms.classList.replace("visible", "invisible");
+    loginTitle.innerText = "Log In";
+    loginButton.innerText = "Log In";
+}
+</script>
+</body>
+</html>

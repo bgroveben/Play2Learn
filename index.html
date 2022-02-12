@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles/normalize.css">
+<link rel="stylesheet" 
+href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" 
+integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" 
+crossorigin="anonymous">
+<link rel="stylesheet" href="styles/styles.css">
+<title>Home</title>
+</head>
+<body>
+    <header>
+        <h1>Play2Learn Home Page</h1>
+        <nav>
+            <div>
+                <li class="float-left">pl4y2l34rn rul35</li>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Games<i class="fa fa-arrow-down" id="arrow"></i></a>
+                        <!-- arrow icon needs screen width of at least 466px -->
+                        <ul>
+                            <li><a href="games/anagram-hunt.html">Anagram Hunt</a></li>
+                            <li><a href="games/math-facts.html">Math Facts</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <h3 id="quotestitle">Observations, Advice, and Other Quotes:</h3>
+
+        <section id="quotes"></section>
+
+        <section id=gamessection>
+            <article class="games" id="article1">
+                <h2 class="gamestitle">Math Facts</h2>
+                <p>This is a simple game for practicing addition, subtraction, multiplication, and division. The problem appears with a text field below it. Enter values using the keyboard or the buttons on the screen, and see how many correct answers you can get in 30 seconds.</p>
+                <button class="linktogames"><a href="games/math-facts.html">Play</a></button>
+            </article>
+
+            <article class="games" id="article2">
+                <h2 class="gamestitle">Anagram Hunt</h2>
+                <p>An anagram is a word made by rearranging the letters of another word. For example, post, pots, opts, tops, and spot are all anagrams of stop. The object of the Anagram Hunt game is to find all the anagrams for a given word.</p>
+                <button class="linktogames"><a href="games/anagram-hunt.html">Play</a></button>
+            </article>
+        </section>
+
+    </main>
+    <footer>
+        <p>&copy; 2022 b6r0v3b3n/bgroveben. All rights reserved.</p>
+        <address>
+            <a href="contact-us.html">
+                <i class="fas fa-envelope-square"></i></a>
+            <a href="https://www.instagram.com">
+                <i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com">
+                <i class="fab fa-twitter-square"></i></a>
+            <a href="https://www.facebook.com">
+                <i class="fab fa-facebook-square"></i></a>
+        </address>
+    </footer>
+
+<script>
+
+window.addEventListener('load', changeText);
+
+const statement = [];
+const source = [];
+
+statement[0] = '"We have to stop optimizing for programmers and start optimizing for users."';
+source[0] = "Jeff Atwood";
+
+statement[1] = '"The human spirit must prevail over technology."';
+source[1] = "Albert Einstein";
+
+statement[2] = '"Do or do not. There is no try."';
+source[2] = "Yoda";
+
+statement[3] = '"Any sufficiently advanced technology is indistinguishable from magic."';
+source[3] = "Arthur C.Clarke";
+
+statement[4] = '"Computers are useless. They can only give you answers.';
+source[4] = "Pablo Picasso";
+
+statement[5] = '"The computer can\'t tell you the emotional story. It can give you the exact mathematical design."';
+source[5] = "Frank Zappa";
+
+setInterval(changeText, 10000);
+const quote = document.getElementById("quotes");
+let i = 0;
+function changeText(){
+    quotes.innerHTML=(statement[i] + '<p><i>' + source[i] + '</i></p>');
+    if(i === 5)
+        i = 0;
+    else
+        i++;
+}
+
+</script>
+        
+</body>
+</html>
+

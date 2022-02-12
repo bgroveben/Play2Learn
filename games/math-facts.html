@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../styles/normalize.css">
+<link rel="stylesheet" 
+href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" 
+integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" 
+crossorigin="anonymous">
+<link rel="stylesheet" href="../styles/styles.css">
+<title>Math Facts</title>
+</head>
+<body>
+    <header>
+        <h1>Math Facts</h1>
+        <nav>
+            <div>
+                <li class="float-left">pl4y2l34rn rul35</li>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#">Games<i class="fa fa-arrow-down" id="arrow"></i></a>
+                        <!-- arrow icon needs screen width of at least 466px -->
+                        <ul>
+                            <li><a href="anagram-hunt.html">Anagram Hunt</a></li>
+                            <li><a href="math-facts.html">Math Facts</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../login.html">Login</a></li>
+                </ul>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <h2>Math Facts Practice</h2>
+
+        <form id="operation" class="visible">
+          <label for="operators">Operation:</label>
+          <select id="operators" type="button">
+            <option value="+">+ Addition</option>
+            <option value="-">- Subtraction</option>
+            <option value="/">/ Division</option>
+            <option value="*">x Multiplication</option>
+          </select>
+          <ol id="instructions">
+            <li>Select Operation</li>
+            <li>Press Start</li>
+            <li>Solve as many problems as you can in 30 seconds.</li>
+          </ol>
+          <!--<p>Wrong answers won't hurt your score.</p>-->
+          <input type="button" id="startbutton" name="startbutton" value="Start" onclick="startGame();" />
+        </form>
+
+        <table id="calculator" class="invisible">
+            <thead>
+              <caption>Use minus button for negative numbers.</caption>
+              <caption>Use decimal point for division, round to one place.</caption>
+              <tr id="timerandscore">
+                <td><label>Score:</label></td>
+                <td><input id="score" class="calculatorbutton" type="button" name="score" value="0" /></td>
+                <td><label>Timer:</label></td>
+                <td><input id="timer" class="calculatorbutton" type="button" name="timer" value="Go!" /></td>
+              </tr>
+              <tr id="equationandinput">
+                <td><input id="displayequation" class="calculatorbutton" type="text" name="equation" placeholder="Press Enter to Begin"/></td>
+                <td><input id="userinput" class="calculatorbutton" type="text" name="userinput" placeholder="Your Answer"/></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="keys">
+                <td><input id="seven" class="calculatorbutton" type="button" name="seven" value="7" data-number="7"></td>
+                <td><input id="eight" class="calculatorbutton" type="button" name="eight" value="8" data-number="8"></td>
+                <td><input id="nine" class="calculatorbutton" type="button" name="nine" value="9" data-number="9"></td>
+              </tr>
+              <tr class="keys">
+                <td><input id="four" class="calculatorbutton" type="button" name="four" value="4" data-number="4"></td>
+                <td><input id="five" class="calculatorbutton" type="button" name="five" value="5" data-number="5"></td>
+                <td><input id="six" class="calculatorbutton" type="button" name="six" value="6" data-number="6"></td>
+              </tr>
+              <tr class="keys">
+                <td><input id="one" class="calculatorbutton" type="button" name="one" value="1" data-number="1"></td>
+                <td><input id="two" class="calculatorbutton" type="button" name="two" value="2" data-number="2"></td>
+                <td><input id="three" class="calculatorbutton" type="button" name="three" value="3" data-number="3"></td>
+              </tr>
+              <tr class="keys">
+                <td><input id="zero" class="calculatorbutton" type="button" name="zero" value="0" data-number="0"></td>
+                <td><input id="decimalpoint" class="calculatorbutton" type="button" name="decimalpoint" value="." data-number="."></td>
+                <td><input id="minus" class="calculatorbutton" type="button" name="minus" value="-" data-number="-"></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr id="calcfooter">
+                <td><input id="enterbutton" class="calculatorbutton" type="button" name="equals" value="Enter" data-operation="enter"/></td>
+                <td><input id="clear" class="calculatorbutton" type="button" name="clear" value="Clear" data-operation="clear" onclick="clearAndFocus();"></td>
+              </tr>
+            </tfoot>
+          </table>
+
+        <form id="resultsform" class="invisible">
+          <label for="results">Times Up! Your Score is:</label>
+          <input class="calculatorbutton" id="finalscore" type="text" name="finalscore" placeholder="Score" />
+          <input class="calculatorbutton" id="playagain" type="button" name="playagain" value="Play Again" onclick="restartGame()" />
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2022 b6r0v3b3n/bgroveben. All rights reserved.</p>
+        <address>
+            <a href="contact-us.html">
+                <i class="fas fa-envelope-square"></i></a>
+            <a href="https://www.instagram.com">
+                <i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com">
+                <i class="fab fa-twitter-square"></i></a>
+            <a href="https://www.facebook.com">
+                <i class="fab fa-facebook-square"></i></a>
+        </address>
+    </footer>
+<script>
+
+const startButton = document.getElementById("startbutton");
+const operation = document.getElementById("operation");
+const calculator = document.getElementById("calculator");
+const resultsForm = document.getElementById('resultsform');
+const timer = document.getElementById('timer');
+const score = document.getElementById('score');
+const enterButton = document.getElementById("enterbutton");
+const numberButtons = document.querySelectorAll('[data-number]');
+const operationButtons = document.querySelectorAll('[data-operation]');
+const userInput = document.getElementById('userinput');
+const finalScore = document.getElementById('finalscore');
+let displayEquation = document.getElementById('displayequation');
+
+function startGame() {
+  operation.classList.replace("visible", "invisible");
+  calculator.classList.replace("invisible", "visible");
+  resultsForm.classList.replace("visible", "invisible");
+  // Timer for game
+  let timeleft = 30;
+  timer.value = "Go!"
+  let gameTimer = setInterval(function(){
+    if(timeleft <= 0){
+      clearInterval(gameTimer);
+      resultsForm.classList.replace("invisible", "visible");
+      calculator.classList.replace("visible", "invisible");
+      // display final score
+      finalScore.value = score.value;
+      displayEquation.placeholder = "Press Enter to Start";
+      userInput.placeholder = "Your Answer";
+    }
+    timer.value = timeleft;
+    timeleft -= 1;
+  }, 1000);
+}
+
+function restartGame() {
+  operation.classList.replace("invisible", "visible");
+  calculator.classList.replace("visible", "invisible");
+  resultsForm.classList.replace("visible", "invisible");
+  score.value = 0;
+  displayEquation.value = null; // Set to 0?
+  userInput.value = null;       // Set to 0?
+  displayEquation.placeholder = "Press Enter to Start";
+  userInput.placeholder = "Your Answer";
+}
+
+// Generate random equations
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function generateEquation(operator) {
+    const n1 = getRandomInt(1, 10);
+    const n2 = getRandomInt(1, 10);
+    let result;
+    switch (operator) {
+      case "+":
+        result = n1 + n2;
+        checkEquation();
+        break;
+      case "-":
+        result = n1 - n2;
+        checkEquation();
+        break;
+      case "*":
+        result = n1 * n2;
+        checkEquation();
+        break;
+      case "/":
+        result = n1 / n2;
+        // alert("computer answer " + result);  // sanity check
+        // alert(parseFloat((result).toFixed(1)));   // alert with answer to cheat
+        checkDivision();
+        break;
+    }
+    displayEquation.value = (n1 + ' ' + operator + ' ' + n2);
+}
+
+function checkEquation() {
+  let equationAnswer = eval(displayEquation.value);
+  let userAnswer = userInput.value;
+ if (equationAnswer == userAnswer) {
+    score.value++;
+  }
+}
+
+function checkDivision() {
+  let equationAnswer = eval(displayEquation.value);
+  let userAnswer = userInput.value;
+  // Compare floating point numbers for division
+  // Round to one decimal place and check the numbers before and after the decimal point
+  let userAnswerAfterDecimal = parseInt((userAnswer % 1).toFixed(1).substring(2));
+  let userAnswerBeforeDecimal = Math.trunc(userAnswer);
+  let equationAnswerAfterDecimal = parseInt((equationAnswer % 1).toFixed(1).substring(2));
+  let equationAnswerBeforeDecimal = Math.trunc(equationAnswer);
+  /* Sanity Checks
+  alert("equationAnswerBeforeDecimal: " + equationAnswerBeforeDecimal);
+  alert("equationAnswerAfterDecimal: " + equationAnswerAfterDecimal);
+  alert("userAnswerBeforeDecimal: " + userAnswerBeforeDecimal);
+  alert("userAnswerAfterDecimal: " + userAnswerAfterDecimal);
+  */ 
+if (equationAnswerBeforeDecimal == userAnswerBeforeDecimal && equationAnswerAfterDecimal == userAnswerAfterDecimal) {
+    score.value++;
+  }
+}
+
+function clearAndFocus() {
+  userInput.value = '';
+  userInput.focus();
+}
+
+enterButton.addEventListener('click', function() {
+  generateEquation(operators.value);
+});
+
+enterButton.addEventListener('click', function() {
+  clearAndFocus();
+});
+
+numberButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    userInput.value += button.value;
+  });
+});
+
+</script>
+</body>
+</html>
