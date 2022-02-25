@@ -9,6 +9,7 @@ href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
 integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" 
 crossorigin="anonymous">
 <link rel="stylesheet" href="../styles/styles.css">
+<script src="../scripts/math-facts.js"></script>
 <title>Math Facts</title>
 </head>
 <body>
@@ -16,7 +17,7 @@ crossorigin="anonymous">
         <h1>Math Facts</h1>
         <nav>
             <div>
-                <li class="float-left">pl4y2l34rn rul35</li>
+              <li class="float-left">Play2Learn <i class="fa fa-user-graduate"></i></li>
             </div>
             <div>
                 <ul>
@@ -51,7 +52,7 @@ crossorigin="anonymous">
             <li>Solve as many problems as you can in 30 seconds.</li>
           </ol>
           <!--<p>Wrong answers won't hurt your score.</p>-->
-          <input type="button" id="startbutton" name="startbutton" value="Start" onclick="startGame();" />
+          <input type="button" id="startbutton" name="startbutton" value="Start" />
         </form>
 
         <table id="calculator" class="invisible">
@@ -93,8 +94,8 @@ crossorigin="anonymous">
             </tbody>
             <tfoot>
               <tr id="calcfooter">
-                <td><input id="enterbutton" class="calculatorbutton" type="button" name="equals" value="Enter" data-operation="enter"/></td>
-                <td><input id="clear" class="calculatorbutton" type="button" name="clear" value="Clear" data-operation="clear" onclick="clearAndFocus();"></td>
+                <td><input id="enterbutton" class="calculatorbutton" type="button" name="enterbutton" value="Enter" data-operation="enter"/></td>
+                <td><input id="clearbutton" class="calculatorbutton" type="button" name="clearbutton" value="Clear" data-operation="clear"></td>
               </tr>
             </tfoot>
           </table>
@@ -102,7 +103,7 @@ crossorigin="anonymous">
         <form id="resultsform" class="invisible">
           <label for="results">Times Up! Your Score is:</label>
           <input class="calculatorbutton" id="finalscore" type="text" name="finalscore" placeholder="Score" />
-          <input class="calculatorbutton" id="playagain" type="button" name="playagain" value="Play Again" onclick="restartGame()" />
+          <input class="calculatorbutton" id="playagain" type="button" name="playagain" value="Play Again" />
         </form>
     </main>
     <footer>
@@ -118,6 +119,8 @@ crossorigin="anonymous">
                 <i class="fab fa-facebook-square"></i></a>
         </address>
     </footer>
+
+<!--
 <script>
 
 const startButton = document.getElementById("startbutton");
@@ -246,5 +249,6 @@ numberButtons.forEach(button => {
 });
 
 </script>
+-->
 </body>
 </html>
