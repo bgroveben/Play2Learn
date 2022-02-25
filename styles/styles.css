@@ -8,6 +8,16 @@ a {
   text-decoration: none;
 }
 
+img {
+  width: 10rem;
+  float: left;
+  margin-top: -2rem;
+}
+
+#quotestitle {
+  margin-left: 2rem;
+}
+
 form {
     margin: auto;
     width: 500px;
@@ -34,7 +44,7 @@ h2 {
 }
 
 #quotestitle {
-  margin-top: 2rem;
+  padding-top: 6rem;
 }
 
 .linktogames {
@@ -163,10 +173,6 @@ header nav ul li:hover>ul {
   font-size: 1.5rem;
   font-style: oblique;
   margin-left: 2.5rem;
-}
-
-#repeatpassword {
-  display: visible;
 }
 
 footer {

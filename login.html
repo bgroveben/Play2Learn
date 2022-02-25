@@ -2,122 +2,94 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="styles/normalize.css">
+<link rel="stylesheet" href="styles/styles.css">
 <link rel="stylesheet" 
 href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" 
 integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" 
 crossorigin="anonymous">
-<link rel="stylesheet" href="styles/styles.css">
+<script src="login.js"></script>
+<!--
+<link rel="stylesheet" href="styles/normalize.css">
+-->
 <title>Login</title>
 </head>
 <body>
-    <header>
-        <h1>Login and Registration</h1>
-        <nav>
-            <div>
-                <li class="float-left">pl4y2l34rn rul35</li>
-            </div>
-            <div>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Games<i class="fa fa-arrow-down" id="arrow"></i></a>
-                        <!-- arrow icon needs screen width of at least 466px -->
-                        <ul>
-                            <li><a href="games/anagram-hunt.html">Anagram Hunt</a></li>
-                            <li><a href="games/math-facts.html">Math Facts</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="login.html">Login</a></li>
-                </ul>
-            </div>
-          </nav>
-      </header>
-    <main>
-<!--
-    This is a simple form. When the user clicks on the Need an account? Register link, the 
-    page should not refresh or go to another page. Instead, you should use JavaScript to hide 
-    the login form and show the register form.
-    Use a div class for login and register forms, no div class for elements displayed on both
-    pages?
-    Both forms should have an action of javascript:alert('Form Submitted'), which will simply 
-    alert that the form was submitted.
-    WFM101/Forms/Solutions/registration-2.html
--->
-        <form id="loginform" action="javascript:alert('Form Submitted')">
-            <h2 id="logintitle">Log In</h2> 
-            <div>
-                <label for="username">Username:</label>
-                <input type="text" name="username" id="username" size="15">
-            </div>
-            <div id="useremail" class="invisible">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-            </div>
-            <div>
-                <label for="pw">Password:</label>
-                <input type="password" name="pw" id="pw" size="15">
-            </div>
-            <div id="repeatpassword" class="invisible">
-                <label for="rpw">Repeat Password:</label>
-                <input type="password" name="rpw" id="rpw" size="15">
-            </div>
-            <div>
-                <button type="submit" name="loginbutton" id="loginbutton"
-                    value="Log In">Log In</button>
-            </div>
-            <div id="registerterms" class="invisible">
-                <input type="checkbox" name="terms" id="terms">
-                <label for="terms">I am over 13 and like playing computer games.</label>
-            </div>
-            <div>
-                <a href="#" id="registerlink" class="visible">Need an account? Register Here.</a>
-                <a href="#" id="loginlink" class="invisible">Have an account? Log In Here.</a>
-            </div>
-        </form>
-    </main>
-    <footer>
-        <p>&copy; 2022 b6r0v3b3n/bgroveben. All rights reserved.</p>
-        <address>
-            <a href="contact-us.html">
-                <i class="fas fa-envelope-square"></i></a>
-            <a href="https://www.instagram.com">
-                <i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com">
-                <i class="fab fa-twitter-square"></i></a>
-            <a href="https://www.facebook.com">
-                <i class="fab fa-facebook-square"></i></a>
-        </address>
-    </footer>
-<script>
-const registerLink = document.getElementById('registerlink');
-const loginLink = document.getElementById('loginlink');
-const repeatPassword = document.getElementById('repeatpassword');
-const loginTitle = document.getElementById('logintitle');
-const loginButton = document.getElementById('loginbutton');
-const userEmail = document.getElementById('useremail');
-const registerTerms = document.getElementById('registerterms');
-registerLink.addEventListener('click', register);
-function register() {
-    repeatPassword.classList.replace("invisible", "visible");
-    registerLink.classList.replace("visible", "invisible");
-    loginLink.classList.replace("invisible", "visible");
-    userEmail.classList.replace("invisible", "visible");
-    registerTerms.classList.replace("invisible", "visible");
-    loginTitle.innerText = "Register";
-    loginButton.innerText = "Register";
-}
-loginLink.addEventListener('click', logIn);
-function logIn() {
-    repeatPassword.classList.replace("visible", "invisible");
-    loginLink.classList.replace("visible", "invisible");
-    registerLink.classList.replace("invisible", "visible");
-    userEmail.classList.replace("visible", "invisible");
-    registerTerms.classList.replace("visible", "invisible");
-    loginTitle.innerText = "Log In";
-    loginButton.innerText = "Log In";
-}
-</script>
+  <header>
+    <h1>Login and Registration</h1>
+    <nav>
+        <div>
+            <li class="float-left">pl4y2l34rn rul35</li>
+        </div>
+        <div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Games<i class="fa fa-arrow-down" id="arrow"></i></a>
+                    <!-- arrow icon needs screen width of at least 466px -->
+                    <ul>
+                        <li><a href="games/anagram-hunt.html">Anagram Hunt</a></li>
+                        <li><a href="games/math-facts.html">Math Facts</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+      </nav>
+  </header>
+<main>
+
+  <form id="login-form" method="post" class="visible" action="javascript:alert('Form Submitted')" novalidate>
+    <h2>Login</h2>
+    <label for="login-username">Username:</label>
+    <input type="text" id="login-username" name="login-username" 
+      required minlength="8" maxlength="25">
+    <label for="login-password">Password:</label>
+    <input type="password" name="login-password" id="login-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+    <button name="submit" id="login-button">Log In</button>
+    <div>
+      <a href="#" id="registerlink">Need an account? Register Here.</a>
+    </div>
+  </form>
+
+  <form id="registration-form" method="post" class="invisible" action="javascript:alert('Form Submitted')" novalidate>
+    <h2>Register</h2>
+    <label for="register-username">Username:</label>
+    <input type="text" id="register-username" name="register-username" 
+      required minlength="8" maxlength="25">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="pw">Password:</label>
+    <input type="password" name="pw" id="pw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters" required>
+    <label for="pw2">Confirm Password:</label>
+    <input type="password" name="pw2" id="pw2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Please enter a matching password" required>
+    <button name="submit" id="registration-button">Register</button>
+    <div id="registerterms">
+        <input type="checkbox" name="terms" id="terms" required>
+        <label for="terms">I am over 13 and like playing computer games.</label>
+    </div>
+    <div>
+      <a href="#" id="loginlink">Have an account? Log In Here.</a>
+   </div>
+  </form>
+
+  <br />
+  <h2 id="registration-confirm" class="invisible">Thank you for registering.</h2>
+  <h2 id="login-confirm" class="invisible">You are now logged in.</h2>
+</main>
+<footer>
+  <p>&copy; 2022 b6r0v3b3n/bgroveben. All rights reserved.</p>
+  <address>
+      <a href="contact-us.html">
+      <i class="fas fa-envelope-square"></i></a>
+      <a href="https://www.instagram.com">
+          <i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com">
+          <i class="fab fa-twitter-square"></i></a>
+      <a href="https://www.facebook.com">
+          <i class="fab fa-facebook-square"></i></a>
+  </address>
+</footer>
 </body>
 </html>
