@@ -45,14 +45,10 @@ function loginSubmit() {
 function confirmPassword() {
   let firstPassword = document.getElementById('pw');
   let secondPassword = document.getElementById('pw2');
-  // alert(firstPassword.value);
-  // alert(secondPassword.value);
   if (firstPassword.value == secondPassword.value) {
-    // addError(secondPassword);
     removeError(secondPassword)
     checkField(secondPassword);
   } else {
-    // checkField(secondPassword);
     addError(secondPassword);
   }
 }
@@ -95,20 +91,8 @@ window.addEventListener('load', function(e) {
   
   password2.addEventListener("input", function(e) {
     confirmPassword();
-    // checkField(password2);
   });
 
-
-// https://express-validator.github.io/docs/custom-validators-sanitizers.html
-/* Match passwords  
-  password2.addEventListener("input", function(e) {
-    if (password1 == password2) {
-      checkField(password2);
-    } else {
-      addError(password2);
-    }
-  });
-*/
 
   terms.addEventListener("input", function(e) {
     checkField(terms);
@@ -153,7 +137,6 @@ window.addEventListener('load', function(e) {
     checkField(email);
     checkField(password1);
     confirmPassword();
-    // checkField(password2);
     checkField(terms);
     
     // If form is invalid, prevent submission
