@@ -1,24 +1,11 @@
 body {
-  background: lightcyan;
+  background-color: aliceblue;
   margin: 0.5rem;
   padding: 0.5rem;
 }
 
 a {
   text-decoration: none;
-}
-
-/*
-img {
-  width: 10rem;
-  float: left;
-  margin-top: -2rem;
-}
-*/
-
-#quotestitle {
-  margin-top: -3rem;
-  margin-left: 2rem;
 }
 
 form {
@@ -44,10 +31,20 @@ textarea {
 h2 {
   text-align: center;
   margin-top: 3rem;
+  color: midnightblue;
 }
 
 #quotestitle {
+  margin-top: -3rem;
+  margin-left: 4rem;
   padding-top: 6rem;
+  color: blue;
+}
+
+#quotes {
+  font-size: 1.2rem;
+  width: 80%;
+  color: darkblue;
 }
 
 .linktogames {
@@ -55,7 +52,7 @@ h2 {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   width: 30%;
-  border-color: turquoise;
+  border: 1px solid dodgerblue;
   float: right;
 }
 
@@ -89,8 +86,13 @@ h2 {
   margin-top: 0.5rem;
   padding-top: 0.5rem;
   text-align: center;
-  border: 1px solid gray;
+  border: 1px solid darkslategray;
   border-radius: 0.5rem;
+}
+
+#registerlink, 
+#loginlink {
+  color: crimson;
 }
 
 section {
@@ -101,18 +103,13 @@ section {
 }
 
 section article {
-  border: 1px solid turquoise;
   border-radius: 0.5rem;
   flex: 1;
   padding: 0.5rem;
   margin: 0.5rem 3rem;
   min-width: 200px;
+  border: 1px solid dodgerblue;
   background-color: lightsteelblue;
-}
-
-#quotes {
-  font-size: 1.2rem;
-  width: 80%;
 }
 
 h3 {
@@ -121,7 +118,8 @@ h3 {
 /* HEADER NAV */
 
 header {
-  padding-bottom: 1rem; 
+  padding-bottom: 1rem;
+  padding-top: 3rem; 
 }
 
 header a {
@@ -137,7 +135,7 @@ header nav ul {
   text-align: center;
   float: right;
   border-radius: 0.5rem;
-  border: 1px solid turquoise;
+  border: 1px solid dodgerblue;
   background-color: lightsteelblue;
 }
 
@@ -150,7 +148,7 @@ header nav ul li {
 
 li a {
   text-decoration: none;
-  color: black;
+  color: navy;
 }
 
 header nav ul li>ul {
@@ -176,6 +174,11 @@ header nav ul li:hover>ul {
   font-size: 1.5rem;
   font-style: oblique;
   margin-left: 2.5rem;
+  color: navy;
+}
+
+.copyright {
+  color: royalblue;
 }
 
 footer {
@@ -193,7 +196,7 @@ footer {
 table,
 th,
 td {
-  border: solid black;
+  border: 1px solid mediumblue;
 }
 
 table.separate {
@@ -207,6 +210,7 @@ table.collapse {
 
 caption {
   font-style: bold;
+  padding-bottom: 5px;
 }
 
 #calculator {
@@ -232,24 +236,24 @@ caption {
   grid-template-columns: repeat(2, 1fr);
 }
 
-button {
+button,
+#startbutton {
   background-color: steelblue;
-  color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: x-large;
   margin-top: 10px;
   padding: 5px;
   width: 100%;
-  border-color: turquoise;
+  color: white;
+  border-color: dodgerblue;
   border-radius: 0.5rem;
 }
 
-thead {
-  background-color: whitesmoke;
-}
-
-tfoot {
-  background-color: greenyellow;
+#enterbutton,
+#clearbutton {
+  background-color: lightcyan;
+  color: midnightblue;
+  border-color: dodgerblue;
 }
 
 #operation,
@@ -259,6 +263,7 @@ tfoot {
 
 #startbutton {
   margin: 10px 0px 100px 0px;
+  border: 1px solid darkblue;
 }
 
 #timerandscore {

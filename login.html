@@ -10,14 +10,11 @@ href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
 integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" 
 crossorigin="anonymous">
 <script src="scripts/login.js"></script>
-<!--
-<link rel="stylesheet" href="styles/normalize.css">
--->
-<title>Login</title>
+
+<title>Login and Registration</title>
 </head>
 <body>
   <header>
-    <h1>Login and Registration</h1>
     <nav>
         <div>
           <li class="float-left">Play2Learn <i class="fa fa-user-graduate"></i></li>
@@ -46,7 +43,7 @@ crossorigin="anonymous">
     <input type="text" id="login-username" name="login-username" 
       required minlength="8" maxlength="25">
     <label for="login-password">Password:</label>
-    <input type="password" name="login-password" id="login-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+    <input type="password" name="login-password" id="login-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters." required>
     <button name="submit" id="login-button">Log In</button>
     <div>
       <a href="#" id="registerlink">Need an account? Register Here.</a>
@@ -58,12 +55,12 @@ crossorigin="anonymous">
     <label for="register-username">Username:</label>
     <input type="text" id="register-username" name="register-username" 
       required minlength="8" maxlength="25">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+    <label for="register-email">Email:</label>
+    <input type="email" id="register-email" name="register-email" required>
     <label for="pw">Password:</label>
-    <input type="password" name="pw" id="pw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters" required>
-    <label for="pw2">Confirm Password:</label>
-    <input type="password" name="pw2" id="pw2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Please enter a matching password" required>
+    <input type="password" name="pw" id="pw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters." required>
+    <label for="pw2">Repeat Password:</label>
+    <input type="password" name="pw2" id="pw2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Please enter a matching password." required>
     <button name="submit" id="registration-button">Register</button>
     <div id="registerterms">
         <input type="checkbox" name="terms" id="terms" required>
@@ -79,7 +76,7 @@ crossorigin="anonymous">
   <h2 id="login-confirm" class="invisible">You are now logged in.</h2>
 </main>
 <footer>
-  <p>&copy; 2022 b6r0v3b3n/bgroveben. All rights reserved.</p>
+  <p class="copyright">&copy; 2022 bgroveben. All rights reserved.</p>
   <address>
       <a href="contact-us.html">
       <i class="fas fa-envelope-square"></i></a>

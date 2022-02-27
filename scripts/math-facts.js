@@ -1,5 +1,4 @@
-window.addEventListener('load', function(e) {
-
+window.addEventListener('load', function (e) {
     const startButton = document.getElementById("startbutton");
     const operation = document.getElementById("operation");
     const calculator = document.getElementById("calculator");
@@ -18,17 +17,14 @@ window.addEventListener('load', function(e) {
         operation.classList.replace("visible", "invisible");
         calculator.classList.replace("invisible", "visible");
         resultsForm.classList.replace("visible", "invisible");
-        // Timer for game
         let timeleft = 30;
         timer.value = "Go!"
-        let gameTimer = setInterval(function(){
-            if(timeleft <= 0){
-            clearInterval(gameTimer);
-            resultsForm.classList.replace("invisible", "visible");
-            calculator.classList.replace("visible", "invisible");
-            // display final score
-            finalScore.value = score.value;
-            userInput.placeholder = "Your Answer";
+        let gameTimer = setInterval(function () {
+            if (timeleft <= 0) {
+                clearInterval(gameTimer);
+                resultsForm.classList.replace("invisible", "visible");
+                calculator.classList.replace("visible", "invisible");
+                finalScore.value = score.value;
             }
             timer.value = timeleft;
             timeleft -= 1;
@@ -41,11 +37,9 @@ window.addEventListener('load', function(e) {
         resultsForm.classList.replace("visible", "invisible");
         score.value = 0;
         displayEquation.value = null; // Set to 0?
-        userInput.value = null;       // Set to 0?
-        userInput.placeholder = "Your Answer";
+        userInput.value = null; // Set to 0?
     }
 
-    // Generate random equations
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
@@ -55,24 +49,23 @@ window.addEventListener('load', function(e) {
         const n2 = getRandomInt(1, 10);
         let result;
         switch (operator) {
-        case "+":
-            result = n1 + n2;
-            checkEquation();
-            break;
-        case "-":
-            result = n1 - n2;
-            checkEquation();
-            break;
-        case "*":
-            result = n1 * n2;
-            checkEquation();
-            break;
-        case "/":
-            result = n1 / n2;
-            // alert("computer answer " + result);  // sanity check
-            // alert(parseFloat((result).toFixed(1)));   // alert with answer to cheat
-            checkDivision();
-            break;
+            case "+":
+                result = n1 + n2;
+                checkEquation();
+                break;
+            case "-":
+                result = n1 - n2;
+                checkEquation();
+                break;
+            case "*":
+                result = n1 * n2;
+                checkEquation();
+                break;
+            case "/":
+                result = n1 / n2;
+                // alert(parseFloat((result).toFixed(1))) to display answer;   
+                checkDivision();
+                break;
         }
         displayEquation.value = (n1 + ' ' + operator + ' ' + n2);
     }
@@ -94,12 +87,6 @@ window.addEventListener('load', function(e) {
         let userAnswerBeforeDecimal = Math.trunc(userAnswer);
         let equationAnswerAfterDecimal = parseInt((equationAnswer % 1).toFixed(1).substring(2));
         let equationAnswerBeforeDecimal = Math.trunc(equationAnswer);
-        /* Sanity Checks
-        alert("equationAnswerBeforeDecimal: " + equationAnswerBeforeDecimal);
-        alert("equationAnswerAfterDecimal: " + equationAnswerAfterDecimal);
-        alert("userAnswerBeforeDecimal: " + userAnswerBeforeDecimal);
-        alert("userAnswerAfterDecimal: " + userAnswerAfterDecimal);
-        */ 
         if (equationAnswerBeforeDecimal == userAnswerBeforeDecimal && equationAnswerAfterDecimal == userAnswerAfterDecimal) {
             score.value++;
         }
@@ -109,19 +96,19 @@ window.addEventListener('load', function(e) {
         userInput.value = '';
         userInput.focus();
     }
-    
+
     startButton.addEventListener('click', function () {
         startGame();
         generateEquation(operators.value);
         clearAndFocus();
     });
 
-    enterButton.addEventListener('click', function() {
+    enterButton.addEventListener('click', function () {
         generateEquation(operators.value);
         clearAndFocus();
     });
 
-    userInput.addEventListener('keypress', function(e) {
+    userInput.addEventListener('keypress', function (e) {
         if (e.key == "Enter") {
             generateEquation(operators.value);
             clearAndFocus();
@@ -137,8 +124,8 @@ window.addEventListener('load', function(e) {
     });
 
     numberButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        userInput.value += button.value;
+        button.addEventListener('click', function () {
+            userInput.value += button.value;
+        });
     });
-  });
 });

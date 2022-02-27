@@ -14,7 +14,6 @@ crossorigin="anonymous">
 </head>
 <body>
     <header>
-        <h1>Math Facts</h1>
         <nav>
             <div>
               <li class="float-left">Play2Learn <i class="fa fa-user-graduate"></i></li>
@@ -36,7 +35,7 @@ crossorigin="anonymous">
           </nav>
     </header>
     <main>
-        <h2>Math Facts Practice</h2>
+        <h2>Math Facts</h2>
 
         <form id="operation" class="visible">
           <label for="operators">Operation:</label>
@@ -66,8 +65,10 @@ crossorigin="anonymous">
                 <td><input id="timer" class="calculatorbutton" type="button" name="timer" value="Go!" /></td>
               </tr>
               <tr id="equationandinput">
-                <td><input id="displayequation" class="calculatorbutton" type="text" name="equation" placeholder="Press Enter to Begin"/></td>
-                <td><input id="userinput" class="calculatorbutton" type="text" name="userinput" placeholder="Your Answer"/></td>
+                <td><label>Problem:</label></td>
+                <td><input id="displayequation" class="calculatorbutton" type="text" name="equation"/></td>
+                <td><label>Your Answer:</label></td>
+                <td><input id="userinput" class="calculatorbutton" type="text" name="userinput"/></td>
               </tr>
             </thead>
             <tbody>
@@ -107,9 +108,9 @@ crossorigin="anonymous">
         </form>
     </main>
     <footer>
-        <p>&copy; 2022 b6r0v3b3n/bgroveben. All rights reserved.</p>
+        <p class="copyright">&copy; 2022 bgroveben. All rights reserved.</p>
         <address>
-            <a href="contact-us.html">
+            <a href="../contact-us.html">
                 <i class="fas fa-envelope-square"></i></a>
             <a href="https://www.instagram.com">
                 <i class="fab fa-instagram"></i></a>
