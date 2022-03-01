@@ -34,6 +34,10 @@ h2 {
   color: midnightblue;
 }
 
+h3 {
+  margin-left: 5rem;
+}
+
 #quotestitle {
   margin-top: -3rem;
   margin-left: 4rem;
@@ -112,9 +116,6 @@ section article {
   background-color: lightsteelblue;
 }
 
-h3 {
-  margin-left: 5rem;
-}
 /* HEADER NAV */
 
 header {
@@ -191,8 +192,8 @@ footer {
   }
 }
 
+/* CALCULATOR */
 
-/* Calculator */
 table,
 th,
 td {

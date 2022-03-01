@@ -128,7 +128,7 @@ window.addEventListener('load', function (e) {
         loginForm.classList.replace("invisible", "visible");
     }
 
-    registrationForm.addEventListener("submit", function (e) {
+    registrationForm.addEventListener("submit", function(e) {
         checkField(registerUsername);
         checkField(registerEmail);
         checkField(password1);

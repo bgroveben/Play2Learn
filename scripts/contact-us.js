@@ -1,7 +1,6 @@
 function addError(field) {
     if (field.previousElementSibling &&
         field.previousElementSibling.className === 'error') {
-        // error message already showing
         return;
     }
     const error = document.createElement('div');
