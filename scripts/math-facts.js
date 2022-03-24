@@ -36,8 +36,8 @@ window.addEventListener('load', function (e) {
         calculator.classList.replace("visible", "invisible");
         resultsForm.classList.replace("visible", "invisible");
         score.value = 0;
-        displayEquation.value = null; // Set to 0?
-        userInput.value = null; // Set to 0?
+        displayEquation.value = null;
+        userInput.value = null;
     }
 
     function getRandomInt(min, max) {

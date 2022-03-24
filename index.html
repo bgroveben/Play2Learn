@@ -1,73 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Home</title>
+  <link rel="stylesheet" 
 href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" 
 integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" 
 crossorigin="anonymous">
-<!--<link rel="stylesheet" href="styles/styles.css">-->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<script src="scripts/index.js"></script>
-<title>Home</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <style>
+    /* Remove caret from dropdown menu */
+    .dropdown-toggle::after {
+        content: none;
+    }
+  </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <div>
-                <li class="float-left">Play2Learn <i class="fa fa-user-graduate"></i></li>
-            </div>
-            <div>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Games<i class="fa fa-arrow-down" id="arrow"></i></a>
-                        <!-- arrow icon needs screen width of at least 466px -->
-                        <ul>
-                            <li><a href="games/anagram-hunt.html">Anagram Hunt</a></li>
-                            <li><a href="games/math-facts.html">Math Facts</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="login.html">Login</a></li>
-                </ul>
-            </div>
-          </nav>
-    </header>
-    <main>
+
+<body class="bg-info bg-gradient bg-opacity-10">
+
+<header class="bg-danger bg-gradient bg-opacity-10">
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary bg-gradient bg-opacity-10">
+    <div class="container-fluid bg-danger bg-gradient bg-opacity-10">
+      <a class="navbar-brand ms-2" href="#">Play2Learn<i class="fa fa-user-graduate"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link mx-3" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-3" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-3" href="about.html">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link mx-3 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Games
+              <i class="fa fa-arrow-down" id="arrow"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="games/math-facts.html">Math Facts</a></li>
+              <li><a class="dropdown-item" href="games/anagram-hunt.html">Anagram Hunt</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-3" href="contact-us.html">Contact</a>
+          </li>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="bg-secondary bg-gradient bg-opacity-10">
+    <div class="col-md border border-success bg-info bg-opacity-10 bg-gradient m-3 p-3">
         <h3 id="quotestitle">Observations, Advice, and Other Quotes:</h3>
-
         <section id="quotes"></section>
+    </div>
+    <section class="row pb-4" id=gamessection>
+        <article class="games col-sm col-md border border-warning mx-4 bg-primary bg-gradient bg-opacity-10" id="article1">
+            <h2 class="gamestitle">Math Facts</h2>
+            <p>This is a simple game for practicing addition, subtraction, multiplication, and division. The problem appears with a text field below it. Enter values using the keyboard or the buttons on the screen, and see how many problems you can solve in 30 seconds.</p>
+            <button class="btn btn-warning mb-2"><a href="games/math-facts.html">Play</a></button>
+        </article>
 
-        <section id=gamessection>
-            <article class="games" id="article1">
-                <h2 class="gamestitle">Math Facts</h2>
-                <p>This is a simple game for practicing addition, subtraction, multiplication, and division. The problem appears with a text field below it. Enter values using the keyboard or the buttons on the screen, and see how many correct answers you can get in 30 seconds.</p>
-                <button class="linktogames"><a href="games/math-facts.html">Play</a></button>
-            </article>
+        <article class="games col-sm col-md border border-warning mx-4 bg-primary bg-gradient bg-opacity-10" id="article2">
+            <h2 class="gamestitle">Anagram Hunt</h2>
+            <p>An anagram is a word made by rearranging the letters of another word. For example, post, pots, opts, tops, and spot are all anagrams of stop. The object of the Anagram Hunt game is to find all the anagrams for a given word in 60 seconds.</p>
+            <button class="btn btn-warning mb-2"><a href="games/anagram-hunt.html">Play</a></button>
+        </article>
+    </section>
+</main>
 
-            <article class="games" id="article2">
-                <h2 class="gamestitle">Anagram Hunt</h2>
-                <p>An anagram is a word made by rearranging the letters of another word. For example, post, pots, opts, tops, and spot are all anagrams of stop. The object of the Anagram Hunt game is to find all the anagrams for a given word.</p>
-                <button class="linktogames"><a href="games/anagram-hunt.html">Play</a></button>
-            </article>
-        </section>
-
-    </main>
-    <footer>
-      <p class="copyright">&copy; 2022 bgroveben. All rights reserved.</p>
-        <address>
-            <a href="contact-us.html">
-                <i class="fas fa-envelope-square"></i></a>
-            <a href="https://www.instagram.com">
-                <i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com">
-                <i class="fab fa-twitter-square"></i></a>
-            <a href="https://www.facebook.com">
-                <i class="fab fa-facebook-square"></i></a>
-        </address>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>   
+<footer class="bg-danger bg-gradient bg-opacity-10">
+  <p class="bg-primary bg-gradient bg-opacity-10 ms-2 ps-2">&copy; 2022 bgroveben. All rights reserved.</p>
+    <address class="ms-2 ps-2 bg-warning bg-gradient bg-opacity-10">
+        <a href="contact-us.html">
+            <i class="fas fa-envelope-square"></i></a>
+        <a href="https://www.instagram.com">
+            <i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com">
+            <i class="fab fa-twitter-square"></i></a>
+        <a href="https://www.facebook.com">
+            <i class="fab fa-facebook-square"></i></a>
+    </address>
+</footer>
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="scripts/index.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
 
