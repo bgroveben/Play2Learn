@@ -15,7 +15,7 @@ source[2] = "Yoda";
 statement[3] = '"Any sufficiently advanced technology is indistinguishable from magic."';
 source[3] = "Arthur C.Clarke";
 
-statement[4] = '"Computers are useless. They can only give you answers.';
+statement[4] = '"Computers are useless. They can only give you answers."';
 source[4] = "Pablo Picasso";
 
 statement[5] = '"The computer can\'t tell you the emotional story. It can give you the exact mathematical design."';
