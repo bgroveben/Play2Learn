@@ -1,4 +1,32 @@
 # Play2Learn
 ### An educational website that I'm building for my software developer class.
-You can run this app on your localhost if you wish, or you can open your shell/terminal/console and run `open -a "Target Browser" index.html` from the root directory.
-Thank you for taking the time to read this, and have fun with the math game.
+
+Thank you for taking the time to read this, and have fun with the math and anagram games.
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
