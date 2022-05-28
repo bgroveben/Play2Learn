@@ -51,6 +51,77 @@ const anagrams = {
         "crate",
         "trace",
         "react"
+      ],
+      [
+        "weird",
+        "wired",
+        "wider"
+      ],
+      [
+        "skate",
+        "stake",
+        "steak",
+        "takes",
+        "teaks"
+      ],
+      [
+        "reins",
+        "resin",
+        "rinse",
+        "risen",
+        "siren"
+      ],
+      [
+        "pores",
+        "poser",
+        "prose",
+        "ropes",
+        "spore"
+      ],
+      [
+        "pines",
+        "snipe",
+        "spine"
+      ],
+      [
+        "serve",
+        "sever",
+        "veers",
+        "verse"
+      ],
+      [
+        "rites",
+        "tiers",
+        "tires",
+        "tries"
+      ],
+      [
+        "pares",
+        "parse",
+        "pears",
+        "reaps",
+        "spare",
+        "spear"
+      ],
+      [
+        "noter",
+        "toner",
+        "tenor"
+      ],
+      [
+        "least",
+        "slate",
+        "stale",
+        "steal",
+        "tales",
+        "teals"
+      ],
+      [
+        "mates",
+        "meats",
+        "steam",
+        "tames",
+        "teams"
       ]
     ],
     6 : [
@@ -87,6 +158,73 @@ const anagrams = {
         "trades",
         "treads",
         "stared"
+      ],
+      [
+        "actors",
+        "costar",
+        "castor"
+      ],
+      [
+        "actress",
+        "casters",
+        "recasts"
+      ],
+      [
+        "bluest",
+        "bluets",
+        "bustle",
+        "sublet",
+        "subtle"
+      ],
+      [
+        "bleats",
+        "stable",
+        "tables",
+      ],
+      [
+        "drapes",
+        "padres",
+        "parsed",
+        "rasped",
+        "spared",
+        "spread"
+      ],
+      [
+        "enlist",
+        "inlets",
+        "listen",
+        "silent",
+        "tinsel"
+      ],
+      [
+        "lister",
+        "liters",
+        "litres",
+        "relist",
+        "tilers"
+      ],
+      [
+        "looped",
+        "poodle",
+        "pooled"
+      ],
+      [
+        "palest",
+        "pastel",
+        "petals",
+        "plates",
+        "pleats",
+        "staple"
+      ],
+      [
+        "paltry",
+        "partly",
+        "raptly"
+      ],
+      [
+        "master",
+        "stream",
+        "tamers"
       ]
     ],
     7 : [
@@ -120,6 +258,47 @@ const anagrams = {
         "instead",
         "sainted",
         "stained"
+      ],
+      [
+        "aridest",
+        "astride",
+        "staider",
+        "tardies",
+        "tirades"
+      ],
+      [
+        "parsley",
+        "parleys",
+        "players",
+        "replays",
+        "sparely"
+      ],
+      [
+        "esprits",
+        "persist",
+        "spriest",
+        "sprites",
+        "stripes"
+      ],
+      [
+        "demerit",
+        "merited",
+        "mitered"
+      ],
+      [
+        "enlarge",
+        "general",
+        "gleaner"
+      ],
+      [
+        "observe",
+        "obverse",
+        "verbose"
+      ],
+      [
+        "saltier",
+        "realist",
+        "retails"
       ]
     ],
     8 : [
@@ -147,6 +326,36 @@ const anagrams = {
         "counters",
         "recounts",
         "trounces"
+      ],
+      [
+        "calipers",
+        "replicas",
+        "spiracle"
+      ],
+      [
+        "lameness",
+        "nameless",
+        "salesman"
+      ],
+      [
+        "decanter",
+        "cantered",
+        "recanted"
+      ],
+      [
+        "thickets",
+        "thickset",
+        "thickest"
+      ],
+      [
+        "designer",
+        "redesign",
+        "resigned"
+      ],
+      [
+        "lameness",
+        "nameless",
+        "salesman"
       ]
     ]
   }

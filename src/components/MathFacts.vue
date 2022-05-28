@@ -3,14 +3,17 @@
     <div v-if="screen === 'config'" id="config-container" class="col-4 mx-auto">
       <h1 class="text-center mb-3">Math Facts</h1>
         <ol id="instructions">
-            <li class="h4">Select Operation.</li>
-            <li class="h4">Choose Max Number.</li>
-            <li class="h4">Press Play.</li>
+            <li class="h4">Select Operation</li>
+            <li class="h4">Choose Max Number</li>
+            <li class="h4">Choose Game Length</li>
+            <li class="h4">Press Play</li>
         </ol>
       <SelectInput :currentValue="operation" label="Operation"
         id="operation" v-model="operation" :options="operations" />
       <SelectInput :currentValue="maxNumber" label="Max Number"
         id="max-number" v-model="maxNumber" :options="numbers" />
+      <SelectInput :currentValue="gameLength.toString()" label="Game Length"
+        id="game-length" v-model="gameLength" :options="times" />
       <PlayButton @play-button-click="play" />
     </div>
     <div v-else-if="screen === 'play'" id="game-container" class="text-center">
@@ -40,7 +43,7 @@
                 <Score :score="score" />
               </div>
               <div class="col px-3 text-right fs-2">
-                <Timer :timeLeft="timeLeft" />
+                <Timer :timeLeft="parseInt(timeLeft)" />
               </div>
             </div>
             <div :class="equationClass" id="equation">
@@ -206,6 +209,13 @@
         }
         return numbers;
       },
+      times: function() {
+        const times = [];
+        for (let time = 30; time <= 120; time+=30) {
+          times.push([time.toString(), time.toString()]);
+        }
+        return times;
+      },
       question: function() {
         const num1 = this.operands.num1;
         const num2 = this.operands.num2;
@@ -223,77 +233,3 @@
   }
 </script>
 
-<style scoped>
-/*
-  #main-container {
-    margin: auto;
-    width: 380px;
-  }
-
-  button.number-button {
-    border-radius: .25em;
-    font-size: 2.9em;
-    height: 1.8em;
-    margin: .1em;
-    text-align: center;
-    width: 1.9em;
-  }
-
-  #clear-button {
-    border-radius: .25em;
-    font-size: 2.9em;
-    height: 1.8em;
-    margin: .1em;
-    text-align: center;
-    width: 3.9em;
-  }
-
-  #scoreboard {
-    font-size: 1.5em;
-  }
-
-  .big {
-    font-size: 1.5em;
-  }
-
-  .huge {
-    font-size: 5em;
-  }
-
-  .slide-leave-active,
-  .slide-enter-active {
-    position: absolute;
-    top: 56px;
-    transition: 1s;
-    width: 380px;
-  }
-
-  .slide-enter {
-    transform: translate(-100%, 0);
-    transition: opacity .5s;
-  }
-
-  .slide-leave-to {
-    opacity:0;
-    transform: translate(100%, 0);
-  }
-
-  .slide-right-leave-active,
-  .slide-right-enter-active {
-    position: absolute;
-    top: 56px;
-    transition: 1s;
-    width: 380px;
-  }
-
-  .slide-right-enter {
-    transform: translate(100%, 0);
-    transition: opacity .5s;
-  }
-
-  .slide-right-leave-to {
-    opacity:0;
-    transform: translate(-100%, 0);
-  }
-*/
-</style>

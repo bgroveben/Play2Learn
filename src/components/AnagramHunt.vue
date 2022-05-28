@@ -1,14 +1,20 @@
 <template>
   <main id="main-container">
     <div v-if="screen === 'config'" id="config-container" class="col-4 mx-auto">
-      <h1 class="text-center mb-3">Anagram Hunt</h1>
-      <ol>
-        <li class="h4">Choose Word Length.</li>
-        <li class="h4">Press Play.</li>
+      <h1 class="text-center mb-2">Anagram Hunt</h1>
+      <ol class="mt-3">
+        <li class="h4">Choose Word Length</li>
+        <li class="h4">Choose Game Length</li>
+        <li class="h4">Press Play</li>
       </ol>
       <SelectInput :currentValue="maxNumber" label="Word Length"
         id="max-number" v-model="maxNumber" :options="numbers" />
+      <SelectInput :currentValue="gameLength.toString()" label="Game Length"
+        id="game-length" v-model="gameLength" :options="times" />
       <PlayButton @play-button-click="play" />
+      <div class="text-center">
+        <small class="text-muted">anagrams courtesy of enchantedlearning.com</small>
+      </div>
     </div>
     <div v-else-if="screen === 'play'" id="game-container" class="text-center">
       <transition name="slide">
@@ -33,26 +39,20 @@
         <template v-if="timeLeft > 0">
           <div class="w-50 mx-auto">
             <div class="row border-bottom" id="scoreboard">
-              <div class="col px-3 text-left fs-2">
+              <div class="col px-3 fs-2">
                 <Score :score="score" />
               </div>
-              <div class="col px-3 text-right fs-2">
-                <Timer :timeLeft="timeLeft" />
+              <div class="col px-3 fs-2">
+                <Timer :timeLeft="parseInt(timeLeft)" />
               </div>
             </div>
-            <!--
-            <div class="mt-3 fs-1">
-              <h3>Anagram:</h3>
-            </div>
-            -->
             <div class="row border-bottom">
               <div class="col text-center mt-2">
                 <h2 class="fw-bold text-primary fs-1" id="anagram">{{anagram}}</h2>
                 <h2 class="fw-bold text-secondary fs-1" id="answer">{{answer}}</h2>
                 <div>
                   <div class="my-3">
-                    <!--<h3>Answer Here:</h3>-->
-                    <input type="text" class="col-3 fs-4 form-control-lg" v-model="answer" ref="answer" placeholder="Answer" aria-label="Answer" id="answer" aria-describedby="Answer" />
+                    <input type="text" class="col-6 fs-4 form-control-lg" v-model="answer" ref="answer" placeholder="Answer" aria-label="Answer" id="answer" aria-describedby="Answer" />
                   </div>
                 </div>
                 <InputButton @is-anagram="isAnagram" />
@@ -110,6 +110,7 @@
     methods: {
       chooseAnagram() {
         if (this.outerArray.length === 0 && this.randomOuter.length === 0) {
+          // this.self.patOnBack();
           console.log("********** WINNER *********");
           this.anagrams = {};
           this.randomOuter = [1];
@@ -128,6 +129,7 @@
         // cheating => display remaining anagrams;     enabled by default
         console.log("cheating: " + this.randomOuter);
         // open your developer tools and check your console
+        // if you think you need a cheating function for the MathFacts game, think harder
       },
       isAnagram() {
         this.answer = this.answer.toLowerCase();
@@ -219,6 +221,13 @@
           numbers.push([number, number]);
         }
         return numbers;
+      },
+      times: function() {
+        const times = [];
+        for (let time = 30; time <= 120; time+=30) {
+          times.push([time.toString(), time.toString()]);
+        }
+        return times;
       }
     }
   }

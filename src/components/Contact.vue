@@ -1,7 +1,6 @@
 <template>
     <main>
-        <div class="">
-            
+        <div class="mt-1">
             <form id="contact-form" method="post" action="javascript:alert('Form Submitted')" class="mx-3 border rounded-3 border-secondary bg-primary bg-gradient bg-opacity-10" novalidate>
                 <h2 class="text-center m-3">Contact Us</h2>
             <div class="col-6 ms-5 mt-3">

@@ -3,11 +3,17 @@
     <header class="bg-danger bg-gradient bg-opacity-10">
       <nav class="navbar navbar-expand-lg navbar-light bg-primary bg-gradient bg-opacity-10">
         <div class="container-fluid bg-danger bg-gradient bg-opacity-10">
+          <!--<i class="fa fa-bell"></i>-->
           <i class="fa fa-user-graduate"></i>
-          <i class="fa fa-user-graduate"></i>
-          <i class="fa fa-user-graduate"></i>
-          <i class="fa fa-user-graduate"></i>
-          <i class="fa fa-user-graduate"></i>
+          <i class="fa fa-school"></i>
+          <i class="fa fa-chalkboard"></i>
+          <!--<i class="fa fa-atom"></i>-->
+          <i><strong>Play2Learn</strong></i>
+          <!--<i class="fa fa-music"></i>-->
+          <!--<i class="fa fa-graduation-cap"></i>-->
+          <i class="fa fa-laptop-code"></i>
+          <i class="fa fa-book-open"></i>      
+          <i class="fa fa-graduation-cap"></i>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
