@@ -1,18 +1,12 @@
 <template>
   <main id="main-container">
-    <div v-if="screen === 'config'" id="config-container" class="col-4 mx-auto">
+    <div v-if="screen === 'config'" id="config-container" class="col-5 mx-auto">
       <h1 class="text-center mb-3">Math Facts</h1>
-        <ol id="instructions">
-            <li class="h4">Select Operation</li>
-            <li class="h4">Choose Max Number</li>
-            <li class="h4">Choose Game Length</li>
-            <li class="h4">Press Play</li>
-        </ol>
-      <SelectInput :currentValue="operation" label="Operation"
+      <SelectInput :currentValue="operation" label="Choose Operation"
         id="operation" v-model="operation" :options="operations" />
-      <SelectInput :currentValue="maxNumber" label="Max Number"
+      <SelectInput :currentValue="maxNumber" label="Choose Max Number"
         id="max-number" v-model="maxNumber" :options="numbers" />
-      <SelectInput :currentValue="gameLength.toString()" label="Game Length"
+      <SelectInput :currentValue="gameLength.toString()" label="Choose Game Length"
         id="game-length" v-model="gameLength" :options="times" />
       <PlayButton @play-button-click="play" />
     </div>

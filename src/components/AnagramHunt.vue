@@ -1,15 +1,10 @@
 <template>
   <main id="main-container">
-    <div v-if="screen === 'config'" id="config-container" class="col-4 mx-auto">
+    <div v-if="screen === 'config'" id="config-container" class="col-5 mx-auto">
       <h1 class="text-center mb-2">Anagram Hunt</h1>
-      <ol class="mt-3">
-        <li class="h4">Choose Word Length</li>
-        <li class="h4">Choose Game Length</li>
-        <li class="h4">Press Play</li>
-      </ol>
-      <SelectInput :currentValue="maxNumber" label="Word Length"
+      <SelectInput :currentValue="maxNumber" label="Choose Word Length"
         id="max-number" v-model="maxNumber" :options="numbers" />
-      <SelectInput :currentValue="gameLength.toString()" label="Game Length"
+      <SelectInput :currentValue="gameLength.toString()" label="Choose Game Length"
         id="game-length" v-model="gameLength" :options="times" />
       <PlayButton @play-button-click="play" />
       <div class="text-center">
@@ -126,9 +121,9 @@
          // remove displayed anagram from array
         this.randomOuter.splice(this.randomOuter.indexOf(this.anagram), 1);
         this.anagramsLeft = this.randomOuter.length;
-        // cheating => display remaining anagrams;     enabled by default
+        // cheating => display remaining anagrams in console;
+        // enabled by default
         console.log("cheating: " + this.randomOuter);
-        // open your developer tools and check your console
         // if you think you need a cheating function for the MathFacts game, think harder
       },
       isAnagram() {
@@ -231,5 +226,4 @@
       }
     }
   }
-  
 </script>
